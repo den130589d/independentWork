@@ -1,0 +1,57 @@
+
+header{
+	background: #FFF;
+	padding: 26px 0 26px 0;
+	
+	
+	img{
+		float: left;
+	}
+	span{
+		vertical-align: top;
+		margin-left: 11px;
+		line-height: 25px;
+		color: #444444;
+	}
+
+
+	
+}
+.fix{
+	position: fixed;
+	z-index: 1000;
+	width: 100%;
+	max-width: 960px;
+}
+
+.mMenu{
+	width: 66px;
+	height: 66px;
+	position: absolute;
+	left: 75%;
+	top: -8px;
+	background: url(../img/menu2.png);
+	@media screen and(min-width: 600px){
+		display: none;
+		}
+}
+
+.nav{
+	float: right;
+	.fs14;
+	padding: 0 12px 0 12px ;
+	line-height: 40px;
+	cursor: pointer;
+	&:hover{
+		background: #1bbc9b;
+		color: #fff;
+	}
+	@media screen and(max-width: @phone-width){
+		display: none;
+		}
+}
+
+.activeNav{
+	background: gray;
+	color: #fff;
+ }

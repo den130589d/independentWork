@@ -1,0 +1,24 @@
+.font(@ff: @regular-fontFamily, @fsize: 18px, @fcolor: #fff){
+	font-family: @ff;
+	font-size: @fsize;
+	color: @fcolor; 
+}
+
+.inline-block(@va: top){
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.iconBack(@iconName){
+	background: url(~"@{pathToIcon}icon@{iconName}.png") no-repeat center; 
+}
+
+//grid start
+.grid(@name, @pad, @columnNum: 0) when (@columnNum <= @columnCount) {
+  .@{name}-@{columnNum}{
+    width: 100% / @columnCount * @columnNum;
+    padding: 0 @pad;
+  }
+
+  .grid(@name, @pad, @columnNum + 1);
+}

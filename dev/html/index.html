@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="css/general.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+	
+
+</head>
+<body>
+	<!--#insert file="includes/-header.html"-->
+	<!--#insert file="includes/-main.html"-->
+	<!--#insert file="includes/-portfolio.html"-->
+	<!--#insert file="includes/-about.html"-->
+	<!--#insert file="includes/-contact.html"-->
+	<!--#insert file="includes/-footer.html"-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="../js/myscrypt.js"></script>
+	<script src="../js/slowScroll.jquery.js"></script>
+	
+	<script>
+		$('a').slowScroll(500);
+
+	function select(){
+	$('#select2').on('click', function(){
+		
+				$('.web').toggleClass('hide');
+			}); 
+			$('#select3').on('click', function(){
+				
+				$('.graphic').toggleClass('hide');
+			});
+			$('#select4').on('click', function(){
+				
+				$('.flat').toggleClass('hide');
+			});  
+			$('#select1').on('click', function(){
+				$('.hide').removeClass('hide');
+				
+				
+				
+			}); 
+	};
+
+	function scrollNav(){
+		$(window).on('scroll', function(){
+			var thisScroll = $(this).scrollTop();
+			var portfolioScroll = $('#portfolio').offset().top;
+			var aboutScroll = $('#about').offset().top;
+			var contact = $('#contact').offset().top;
+
+			if(thisScroll<portfolioScroll){
+				$('.fix span').removeClass('activeNav');
+				$('#homeNav').addClass('activeNav');
+			};
+			if(thisScroll>portfolioScroll && thisScroll<aboutScroll){
+				$('.fix span').removeClass('activeNav');
+				$('#portNav').addClass('activeNav');
+			};
+			if(thisScroll>aboutScroll && thisScroll<contact){
+				$('.fix span').removeClass('activeNav');
+				$('#aboutNav').addClass('activeNav');
+			}
+			if(thisScroll>contact){
+				$('.fix span').removeClass('activeNav');
+				$('#contactNav').addClass('activeNav');
+			}
+
+		});
+
+	};
+
+	scrollNav();
+	select();		
+			
+	</script>
+	
+</body>
+</html>
